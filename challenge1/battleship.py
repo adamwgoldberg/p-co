@@ -8,10 +8,12 @@ already_hit = set()
 chars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
 
 def solve_all():
-    query = base_url + 'boards'
-    response = urllib2.urlopen(query)
-    data = json.load(response)
-    boards = [str(d['board_id']) for d in data]
+    #query = base_url + 'boards'
+    #response = urllib2.urlopen(query)
+    #data = json.load(response)
+    #boards = [str(d['board_id']) for d in data]
+    # Uncomment above
+    boards = ['live_board_3', 'live_board_4', 'live_board_5', 'live_board_2', 'live_board_1']
     print boards
     for board in boards:
         print 'Solving board', board
