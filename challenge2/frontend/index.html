@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang=en>
+	<head>
+		<meta charset=utf-8 />
+
+		<title>Elevator</title>
+
+		<link rel=stylesheet href=style/reset.css />
+		<link rel=stylesheet href=style/jquery.qtip.min.css />
+		<link rel=stylesheet href=style/style.css />
+	</head>
+	<body>
+		<div id=building>
+			<div class=floor id=floor5>
+				<span class=call-up style="color: transparent">⬆</span>
+				<span class=call-down>⬇</span>
+			</div>
+			<div class=floor id=floor4>
+				<span class=call-up>⬆</span>
+				<span class=call-down>⬇</span>
+			</div>
+
+			<div class=floor id=floor3>
+				<span class=call-up>⬆</span>
+				<span class=call-down>⬇</span>
+			</div>
+
+			<div class=floor id=floor2>
+				<span class=call-up>⬆</span>
+				<span class=call-down>⬇</span>
+			</div>
+
+			<div class=floor id=floor1>
+				<span class=call-up>⬆</span>
+				<span class=call-down style="color: transparent">⬇</span>
+			</div>
+
+			<div id=shaft>
+				<div id=car>
+                    <span id=car-direction>●</span>
+				</div>
+			</div>
+		</div>
+
+        <p>
+            <form id=spawn>
+                Spawn person on
+                <select name=origin>
+                    <option value=1>1st</option>
+                    <option value=2>2nd</option>
+                    <option value=3>3rd</option>
+                    <option value=4>4th</option>
+                    <option value=5>5th</option>
+                </select>
+                floor, going to the
+                <select name=destination>
+                    <option value=1>1st</option>
+                    <option value=2>2nd</option>
+                    <option value=3>3rd</option>
+                    <option value=4>4th</option>
+                    <option value=5>5th</option>
+                </select>
+                floor, who
+                <select name=confused>
+                    <option value=false>is not</option>
+                    <option value=true>is</option>
+                </select>
+                confused.
+                <input type=submit value=Spawn />
+            </form>
+        </p>
+        <p>
+            <input type=checkbox id=autospawn checked /> Auto-spawn
+        </p>
+
+		<script src=lib/ext/jquery.min.js></script>
+		<script src=lib/ext/jquery.timers.min.js></script>
+
+		<script src=lib/ext/jquery.qtip.min.js></script>
+
+		<script src=lib/elevator.js></script>
+		<script src=lib/person.js></script>
+		<script src=lib/external_control_panel.js></script>
+		<script src=lib/driver.js></script>
+		<script src=lib/soundtrack.js></script>
+
+		<audio id=open preload=auto>
+			<source src=sounds/open.wav type=audio/wav />
+		</audio>
+		<!-- audio id=close preload=auto>
+			<source src=sounds/close.wav type=audio/wav />
+		</audio -->
+		<audio id=ding preload=auto>
+			<source src=sounds/ding.wav type=audio/wav />
+		</audio>
+
+		<script type=text/javascript charset=utf-8>
+			$(document).ready(function() {
+				var driver = new Driver($('#building'));
+				new Soundtrack(driver);
+			});
+		</script>
+	</body>
+</html>
+
+<!-- People silhouettes by snap2objects.com - used under a Creative Commons
+ 	 Attribution 3.0 license. -->

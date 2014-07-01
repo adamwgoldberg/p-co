@@ -13,7 +13,7 @@ def solve_all():
     #data = json.load(response)
     #boards = [str(d['board_id']) for d in data]
     # Uncomment above
-    boards = ['live_board_2', 'live_board_1', 'live_board3', 'live_board_5', 'live_board_4']
+    boards = ['live_board_5']
     print boards
     for board in boards:
         print 'Solving board', board

@@ -1,0 +1,67 @@
+#building {
+    position: absolute;
+    border: 3px solid gray;
+}
+
+.floor {
+    padding-left: 110px;
+    border-top: 2px solid rgba(0, 0, 0, 0.5);
+    height: 98px;
+    background-image: -webkit-linear-gradient(bottom, #bbc, #ccd 80%, #aab 100%);
+    overflow: hidden;
+}
+
+.floor:first-child {
+    border-top: none;
+}
+
+.floor:nth-child(5) {
+    height: 100px;
+}
+
+.floor .call-up {
+    float: left;
+    position: relative;
+    top: 30px;
+}
+
+.floor .call-down {
+    float: left;
+    position: relative;
+    top: 50px;
+    left: -16px;
+}
+
+.floor .call-active {
+    color: #a02;
+}
+
+#shaft {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-left: 3px solid #222;
+    border-right: 3px solid #222;
+    background-image: -webkit-linear-gradient(left, #222, #444 15%, #444 85%, #222 100%);
+    width: 100px;
+}
+
+#car {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 97px;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    background-image: -webkit-linear-gradient(bottom, #bcc, #cdd 80%, #abb 100%);
+    overflow: hidden;
+}
+
+#car-direction {
+    position: absolute;
+    left: 42px;
+    top: 5px;
+    color: gray;
+}
